@@ -25,7 +25,7 @@ export const tasks: Array<Task> = [
     id: "BUS-2",
     status: "todo",
     priority: "medium",
-    points: 5,
+    // points: 5,
   },
   {
     title: "Develop Busines Strategy",
