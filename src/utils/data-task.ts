@@ -28,7 +28,7 @@ export const tasks: Array<Task> = [
     // points: 5,
   },
   {
-    title: "Develop Busines Strategy",
+    title: "Develop Business Strategy",
     id: "BUS-3",
     status: "in-progress",
     priority: "low",
@@ -46,21 +46,21 @@ export const tasks: Array<Task> = [
     id: "BUS-5",
     status: "done",
     priority: "low",
-    points: 7,
+    points: 5,
   },
   {
     title: "Develop Marketing Strategy",
     id: "BUS-6",
     status: "todo",
     priority: "medium",
-    points: 4,
+    points: 5,
   },
   {
     title: "Develop Marketing Strategy",
     id: "BUS-7",
     status: "done",
     priority: "low",
-    points: 6,
+    points: 13,
   },
   {
     title: "Develop Marketing Strategy",
