@@ -20,6 +20,16 @@ const TaskCard = ({task, updateTaskPoints}: {
   updateTaskPoints: (task: Task, points: number) => void
 }) => {
   const points = task.points || 0
+  const updatePoints = (direction: "up" | "down") => {
+    const fib = [0, 1, 2, 3, 5, 8, 13]
+    const index = fib.indexOf(points)
+    const nextIndex = direction === "up" ? index + 1 : index - 1
+    const newPoints = fib[nextIndex]
+    
+    if (newPoints) {
+      updateTaskPoints(task, newPoints)
+    }
+  }
   
   return (
     <div className="border border-gray-300 rounded-lg px-2 m-2 bg-gray-200 w-56">
@@ -34,9 +44,9 @@ const TaskCard = ({task, updateTaskPoints}: {
           {task.priority === "low" && lowPriorityIcon}
         </div>
         <div className="flex gap-2 items-center">
-          <button onClick={() => updateTaskPoints(task, points - 1)}>-</button>
+          <button onClick={() => updatePoints("down")}>-</button>
           <div className="font-semibold">{points}</div>
-          <button onClick={() => updateTaskPoints(task, points + 1)}>+</button>
+          <button onClick={() => updatePoints("up")}>+</button>
         </div>
         
       </div>
