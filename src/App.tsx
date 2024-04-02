@@ -27,7 +27,7 @@ function App() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(task)
+      body: JSON.stringify(task),
     })
     const updatedTasks = tasks.map((t) => {
       return t.id === task.id ? task : t
@@ -54,7 +54,7 @@ function App() {
   return (
     <div className="flex divide-x">
       {columns.map((column) => (
-        <div
+        <div key={column.status}
           className="flex flex-col"
           onDrop={(e) => handleDrop(e, column.status)}
           onDragOver={(e) => e.preventDefault()}
@@ -75,7 +75,7 @@ function App() {
             }`}
           >
             {column.tasks.map((task) => (
-              <TaskCard task={task} updateTask={updateTask} />
+              <TaskCard key={task.id} task={task} updateTask={updateTask} />
             ))}
           </div>
         </div>
