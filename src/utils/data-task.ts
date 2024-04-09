@@ -2,7 +2,6 @@ export type Status = "todo" | "in-progress" | "done"
 export type Priority = "low" | "medium" | "high"
 
 export type Task = {
-  key: string,
   title: string,
   id: string,
   status: Status,
